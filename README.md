@@ -1,26 +1,11 @@
-# react-native-master-by-sample
+# React Native By Example
 
-## Boilerplate
+- 00 Boilerplate
+- 01 Hello React Native
+- 02 React Hooks
+- 03 Custom Components
+- 04 Design (Styles + Layout)
+- 05 React Native Elements
+- 06 Navigation Between Screens
 
-### Install Expo
-
-> With Expo tools, services, and React, you can build, deploy, and quickly iterate on native Android, iOS, and web apps from the same JavaScript codebase.
-
-https://expo.io/
-
-```
-npm install -g expo-cli
-```
-
-### Get started
-
-Create Expo project (and select __blank (Typescript) template)
-```
-expo init my-react-native-project
-```
-
-
-
-
-
-
+- 99 Sample App
