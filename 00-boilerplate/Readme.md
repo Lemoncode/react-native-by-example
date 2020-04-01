@@ -46,16 +46,16 @@ To get started, you can type:
  › Press s to sign in.
 ```
 
-An other side, a webpage will open on our browser, with logs and expo options.
+On the other hand, a web page will open in our browser, with logs and expo options.
 
 ## Run on Genymotion
 
-We going to execute Genymotion and create or select a device.
+We are going to run Genymotion and create or select a device.
 
-When device emulator is open, we can execute our app with web expo options or from terminal:
+When the device emulator is open, we can run our application with web or terminal options:
 
 ```
 › Press a to run on Android device/emulator
 ```
 
-Our application will be opened on the Genymotion device emulator.
+Our application will open in the Genymotion device emulator.
