@@ -26,7 +26,7 @@ Create Expo project (and select _blank (Typescript) template_)
 expo init my-react-native-project
 ```
 
-To get started, you can type:
+To start, you can type:
 
 ```
   cd my-react-native-project
