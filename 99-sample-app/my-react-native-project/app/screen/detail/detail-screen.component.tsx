@@ -32,12 +32,9 @@ export const DetailScreen: React.FC<Props> = props => {
 
   const handlePress = React.useCallback(async () => {
     if (member.html_url) {
-      // Checking if the link is supported for links with custom URL scheme.
       const supported = await Linking.canOpenURL(member.html_url);
 
       if (supported) {
-        // Opening the link with some app, if the URL scheme is "http" the web link should be opened
-        // by some browser in the mobile
         await Linking.openURL(member.html_url);
       } else {
         Alert.alert(`Don't know how to open this URL: ${member.html_url}`);
@@ -46,7 +43,7 @@ export const DetailScreen: React.FC<Props> = props => {
   }, [member && member.html_url]);
 
   return !member ? (
-    <Text>Loading...</Text>
+    <></>
   ) : (
     <View style={styles.container}>
       <View style={styles.avatarContainer}>

@@ -60,6 +60,7 @@ export const SearchScreen: React.FC<Props> = props => {
                 navigation.navigate("Detail", { login: member.login })
               }
               bottomDivider
+              chevron
             />
           ))}
         </ScrollView>
