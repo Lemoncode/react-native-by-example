@@ -6,9 +6,9 @@ import { list } from "./mock";
 export const HelloComponent: React.FC = () => (
   <FlatList
     data={list}
+    keyExtractor={item => item.id.toString()}
     renderItem={({ item }) => (
       <ListItem
-        key={item.id}
         leftAvatar={{ source: { uri: item.image } }}
         title={item.name}
         subtitle={item.species}
