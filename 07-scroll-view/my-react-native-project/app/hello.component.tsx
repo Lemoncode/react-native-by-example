@@ -1,10 +1,31 @@
 import * as React from "react";
-import { Text } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
+import { ListItem } from "react-native-elements";
+import { list } from "./mock";
 
-interface Props {
-  name: string;
-}
+export const HelloComponent: React.FC = () => (
+  <FlatList
+    data={list}
+    renderItem={({ item }) => (
+      <ListItem
+        key={item.id}
+        leftAvatar={{ source: { uri: item.image } }}
+        title={item.name}
+        subtitle={item.species}
+        bottomDivider
+        chevron
+      />
+    )}
+  />
+);
 
-export const HelloComponent: React.FC<Props> = ({ name }) => {
-  return <Text>Hello {name}!</Text>;
-};
+const styles = StyleSheet.create({
+  item: {
+    flex: 1,
+    borderBottomColor: "black",
+    borderBottomWidth: 1,
+    padding: 25,
+    fontSize: 20,
+    height: 80
+  }
+});
