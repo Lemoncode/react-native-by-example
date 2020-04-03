@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Member } from "../detail-screen.model";
-import { ListItem } from "react-native-elements";
+import { ListItem, Text, Divider } from "react-native-elements";
 
 interface Props {
   member: Member;
@@ -10,7 +10,6 @@ export const MemberInfo: React.FC<Props> = ({ member }) => (
   <>
     {member.email && (
       <ListItem
-        key={member.id}
         leftAvatar={{ icon: { name: "email", type: "material" } }}
         title={member.email}
         subtitle="Email"

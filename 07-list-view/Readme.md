@@ -48,6 +48,7 @@ import { list } from "./mock";
 export const HelloComponent: React.FC = () => (
   <FlatList
     data={list}
+    keyExtractor={item => item.id.toString()}
     renderItem={({ item }) => <Text style={styles.item}>{item.name}</Text>}
   />
 );
@@ -74,5 +75,27 @@ npm install react-native-elements
 
 Now you can use _ListItem_ component from React Native Elements:
 
+_./app/hello.component.tsx_
 
+```typescript
+import * as React from "react";
+import { FlatList } from "react-native";
+import { ListItem } from "react-native-elements";
+import { list } from "./mock";
 
+export const HelloComponent: React.FC = () => (
+  <FlatList
+    data={list}
+    keyExtractor={item => item.id.toString()}
+    renderItem={({ item }) => (
+      <ListItem
+        leftAvatar={{ source: { uri: item.image } }}
+        title={item.name}
+        subtitle={item.species}
+        bottomDivider
+        chevron
+      />
+    )}
+  />
+);
+```

@@ -3,7 +3,7 @@ import { DebounceSearchBar } from "../../common/components/debounce-search-bar/d
 import { Text, ListItem } from "react-native-elements";
 import { getOrganizationMembers } from "./api/api";
 import { Member } from "./search-screen.model";
-import { ScrollView, View, StyleSheet } from "react-native";
+import { FlatList, View, StyleSheet } from "react-native";
 import { RouteProp } from "@react-navigation/native";
 import { RootStackParamList } from "../../app.entry";
 import { StackNavigationProp } from "@react-navigation/stack";
@@ -49,21 +49,22 @@ export const SearchScreen: React.FC<Props> = props => {
         showLoading={loading}
       />
       {members.length > 0 ? (
-        <ScrollView>
-          {members.map(member => (
+        <FlatList
+          data={members}
+          keyExtractor={item => item.id.toString()}
+          renderItem={({ item }) => (
             <ListItem
-              key={member.id}
-              leftAvatar={{ source: { uri: member.avatar_url } }}
-              title={member.login}
-              subtitle={member.html_url}
+              leftAvatar={{ source: { uri: item.avatar_url } }}
+              title={item.login}
+              subtitle={item.html_url}
               onPress={() =>
-                navigation.navigate("Detail", { login: member.login })
+                navigation.navigate("Detail", { login: item.login })
               }
               bottomDivider
               chevron
             />
-          ))}
-        </ScrollView>
+          )}
+        />
       ) : (
         <View style={styles.noResults}>
           <Text>No results</Text>

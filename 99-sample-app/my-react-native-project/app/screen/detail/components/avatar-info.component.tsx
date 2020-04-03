@@ -16,7 +16,7 @@ export const AvatarInfo: React.FC<Props> = ({ member }) => (
         uri: member.avatar_url
       }}
     />
-    <Text style={styles.name}>{member.name}</Text>
+    <Text style={styles.name}>{member.name ? member.name : "Unkown name"}</Text>
   </>
 );
 
